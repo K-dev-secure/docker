@@ -14,3 +14,6 @@ jobs:
         with:
           username: willykoffi
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Deploy to Render
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
