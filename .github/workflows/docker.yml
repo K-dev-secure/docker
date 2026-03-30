@@ -14,6 +14,8 @@ jobs:
         with:
           username: willykoffi
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Push to Docker Hub
+        run: docker push willykoffi/getting-started
       - name: Deploy to Render
         run: |
           curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
